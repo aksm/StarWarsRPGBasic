@@ -1,0 +1,78 @@
+@font-face {
+	font-family: 'StarWars';
+	src: url('../fonts/Starjedi.ttf');
+}
+h1 {
+	color: fuchsia;
+	font-family: 'StarWars', sans-serif;
+	font-size: 100px;
+}
+
+body {
+	background-image: url("../images/bk1.jpg");
+	background-size: cover;
+	background-repeat: no-repeat;
+}
+h2 {
+	color: fuchsia;
+	font-family: 'StarWars', sans-serif;
+	font-size: 20px;
+}
+.character {
+	height: 75px;
+	width: 100px;
+}
+.character-button, .character-container {
+	text-align: center;
+	height: 115px;
+	width: 120px;
+	border-color: green;
+	border-width: 2px;
+	background-color: white;
+}
+
+/*Intro animation - source: https://www.sitepoint.com/css3-starwars-scrolling-text/ */
+
+/*3D perspective transform*/
+#titles
+{
+	position: absolute;
+	width: 18em;
+	height: 50em;
+	bottom: 0;
+	left: 50%;
+	margin-left: -9em;
+	font-size: 350%;
+	font-weight: bold;
+	text-align: justify;
+	overflow: hidden;
+	transform-origin: 50% 100%;
+	transform: perspective(300px) rotateX(25deg);
+	display: none;
+}
+
+/*Pseudo-element overlay fade-out gradient*/
+#titles:after
+{
+	position: absolute;
+	content: ' ';
+	left: 0;
+	right: 0;
+	top: 0;
+	bottom: 60%;
+	background-image: linear-gradient(top, rgba(0,0,0,1) 0%, transparent 100%);
+	pointer-events: none;
+}
+
+/*Scrolling*/
+#titlecontent
+{
+	position: absolute;
+	top: 100%;
+	animation: scroll 100s linear 4s infinite;
+}
+
+@keyframes scroll {
+	0% { top: 100%; }
+	100% { top: -170%; }
+}

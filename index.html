@@ -1,0 +1,49 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+	<meta charset="UTF-8">
+	<title>STAR WARS RPG</title>
+
+	<!-- Link to jQuery -->
+	<script   src="https://code.jquery.com/jquery-3.1.0.min.js"   integrity="sha256-cCueBR6CsyA4/9szpPfrX3s49M9vUU5BgtiJj06wt/s="   crossorigin="anonymous"></script>
+	<!-- CSS reset -->
+	<link rel="stylesheet" type="text/css" href="assets/css/reset.css">
+	<!-- Custom CSS -->
+	<link rel="stylesheet" type="text/css" href="assets/css/style.css">
+
+</head>
+<body>
+	<header>
+		<h1>STAR</h1>
+		<h1>WARS</h1>
+	</header>
+
+	<!-- Player character choice -->
+	<div id="player" class="gameplay"></div>
+	<h2>Your Character</h2>
+
+	<!-- Enemy choices -->
+	<div id="opponents" class="gameplay"></div>
+	<h2>Enemies Available To Attack</h2>
+
+	<!-- Battle arena -->
+	<div id="battle" class="gameplay">
+		<button id="attack" onclick="game.fight()">Attack</button>
+	</div>
+	<h2>Fight Section</h2>
+
+	<!-- Computer -->
+	<div id="defender" class="gameplay"></div>
+	<h2>Defender</h2>
+
+	<div id="titles">
+		<div id="titlecontent">
+
+		<p>Lorem ipsum dolor sit amet, consectetur adipisicing elit. Nemo fugit ea, provident veniam quaerat ducimus in totam, quas animi odit possimus earum iste fuga ipsum vero. Quaerat, repellat, iusto. Eius.</p>
+
+		</div>
+	</div>
+	<!-- Game logic -->
+	<script src="assets/javascript/game.js"></script>
+</body>
+</html>
