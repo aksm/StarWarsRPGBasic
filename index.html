@@ -1,5 +1,5 @@
 <!DOCTYPE html>
-<html lang="en">
+<html lang="en" class="intro-container game-container">
 <head>
 	<meta charset="UTF-8">
 	<title>STAR WARS RPG</title>
@@ -8,42 +8,59 @@
 	<script   src="https://code.jquery.com/jquery-3.1.0.min.js"   integrity="sha256-cCueBR6CsyA4/9szpPfrX3s49M9vUU5BgtiJj06wt/s="   crossorigin="anonymous"></script>
 	<!-- CSS reset -->
 	<link rel="stylesheet" type="text/css" href="assets/css/reset.css">
+	<!-- CSS for scrolling intro -->
+	<link rel="stylesheet" type="text/css" href="assets/css/intro.css">
 	<!-- Custom CSS -->
 	<link rel="stylesheet" type="text/css" href="assets/css/style.css">
 
 </head>
-<body>
-	<header>
-		<h1>STAR</h1>
-		<h1>WARS</h1>
-	</header>
+	<body class="intro-container game-container">
+		<header class="gameplay">
+			<h1>STAR</h1>
+			<h1>WARS</h1>
+		</header>
 
-	<!-- Player character choice -->
-	<div id="player" class="gameplay"></div>
-	<h2>Your Character</h2>
+		<!-- Player character choice -->
+		<div id="player" class="gameplay"></div>
+		<h2 class="gameplay">Your Character</h2>
 
-	<!-- Enemy choices -->
-	<div id="opponents" class="gameplay"></div>
-	<h2>Enemies Available To Attack</h2>
+		<!-- Choose opponent -->
+		<div id="opponents" class="gameplay"></div>
+		<h2 class="gameplay">Enemies Available To Attack</h2>
 
-	<!-- Battle arena -->
-	<div id="battle" class="gameplay">
-		<button id="attack" onclick="game.fight()">ATTACK</button>
-	</div>
-	<h2>Fight Section</h2>
-
-	<!-- Computer -->
-	<div id="defender" class="gameplay"></div>
-	<h2>Defender</h2>
-	<div id="fight-status" class="gameplay"></div>
-	<div id="titles">
-		<div id="titlecontent">
-
-		<p>Lorem ipsum dolor sit amet, consectetur adipisicing elit. Nemo fugit ea, provident veniam quaerat ducimus in totam, quas animi odit possimus earum iste fuga ipsum vero. Quaerat, repellat, iusto. Eius.</p>
-
+		<!-- Battle arena -->
+		<div id="battle" class="gameplay">
+			<button id="attack" onclick="game.fight()">ATTACK</button>
 		</div>
-	</div>
-	<!-- Game logic -->
-	<script src="assets/javascript/game.js"></script>
-</body>
+		<h2 class="gameplay">Fight Section</h2>
+
+		<!-- Computer -->
+		<div id="defender" class="gameplay"></div>
+		<h2 class="gameplay">Defender</h2>
+		<div id="fight-status" class="gameplay"></div>
+
+		<!-- Game logic -->
+		<script src="assets/javascript/game.js"></script>
+
+		<!-- Intro with crawling text -->
+		<div id="intro">
+			<p id="start">One week ago in a coding boot camp not so far away&hellip;</p>
+
+			<h1 id="introHead">STAR WARS<sub>The RPG</sub></h1>
+
+			<div id="titles"><div id="titlecontent">
+
+				<p class="center">EPISODE VIII<br />THE FORCE AWAKENS<br />(CLICK TEXT TO SKIP INTRO)</p>
+					
+				<p>Luke Skywalker has vanished. In his absence, the sinister FIRST ORDER has risen from the ashes of the Empire and will not rest until Skywalker, the last Jedi, has been destroyed.</p>
+				
+				<p>With the support of the REPUBLIC, General Leia Organa leads a brave RESISTANCE. She is desperate to find her brother Luke and gain his help in restoring peace and justice to the galaxy.</p>
+				
+				<p>Leia has sent her most daring pilot on a secret mission to Jakku, where an old ally has discovered a clue to Luke's whereabouts&hellip;</p>
+
+			</div></div>
+			<audio id="introAudio" autoplay src="assets/audio/intro.mp3"></audio>
+			<script src="assets/javascript/intro.js"></script>
+		</div>
+	</body>
 </html>

@@ -101,17 +101,23 @@ var game = {
 
 // Game function calls
 $(document).ready(function(){
+	$(".gameplay").hide();
+	//$(".intro-container").css("background-image", "none");
+	$(".intro-container").removeClass("game-container");
+	// Intro end
+	$("#intro").mouseup(function() {
+		var audio = document.getElementById("introAudio");
+		$(this).hide();
+		audio.pause();
+		$(".intro-container").addClass("game-container");
+		$(".game-container").removeClass("intro-container");
+		$(".gameplay").show();
+	});
+
 	// Initialize character array
 	game.init();
 	$('body').on("click", ".character-button",function() {
 		var c = $(this).data("name");
 		game.updatePlayers(c);
-		console.log("Player HP: "+game.playerhp);
-		console.log("Player AP: "+game.playerap);
-		console.log("Player CAP: "+game.players[game.player].cap);
-		console.log("Opponent HP: "+game.opponenthp);
-		console.log("Opponent AP: "+game.players[game.opponent].ap);
-		console.log("Opponent CAP: "+game.players[game.opponent].cap);
-		console.log("Remaining opponents: "+game.characters);
 	});
 });
