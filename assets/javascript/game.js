@@ -3,11 +3,13 @@ var game = {
 
 	// Characters
 	players: {
-		leia: {name: "Princess Leia", hp: 100, ap: 6, cap: 3, pic: "assets/images/leia.png"},
+		leia: {name: "Leia Organa", hp: 120, ap: 8, cap: 8, pic: "assets/images/leia.png"},
 		//vader: {name: "Darth Vader", hp: 180, ap: 8, cap: 6, pic: "assets/images/vader.jpg"},
-		padme: {name: "Padme Amidala", hp: 100, ap: 6, cap: 3, pic: "assets/images/padme.jpg"},
-		aurra: {name: "Aurra Sing", hp: 120, ap: 6, cap: 20, pic: "assets/images/aurra.png"},
-		zam: {name: "Zam Wesell", hp: 110, ap: 5, cap: 3, pic: "assets/images/zam.jpg"}
+		rey: {name: "Rey", hp: 100, ap: 10, cap: 5, pic: "assets/images/rey.jpg"},
+		//padme: {name: "Padmé Amidala", hp: 100, ap: 6, cap: 3, pic: "assets/images/padme.jpg"},
+		aurra: {name: "Aurra Sing", hp: 180, ap: 2, cap: 25, pic: "assets/images/aurra.png"},
+		zam: {name: "Zam Wesell", hp: 150, ap: 4, cap: 20, pic: "assets/images/zam.jpg"}
+	
 	},
 
 	// Gameplay variables
@@ -56,7 +58,9 @@ var game = {
 		if (this.player != "" && this.opponent != "" && this.opponenthp > 0 && this.playerhp > 0) {
 			this.opponenthp = Math.max(0, this.opponenthp - this.playerap);
 			$("[data-name='"+this.opponent+"']").children("p").html(this.opponenthp);
-			this.playerhp = Math.max(0, this.playerhp - game.players[this.opponent].cap);
+			if(!(this.opponenthp == 0)) {
+				this.playerhp = Math.max(0, this.playerhp - game.players[this.opponent].cap);
+			}
 			$("[data-name='"+this.player+"']").children("p").html(this.playerhp);
 			this.fightStatus.html("<p>You attacked "+this.players[this.opponent].name+" for "+this.playerap+" damage.</p><p>"+this.players[this.player].name+" attacked you back for "+game.players[this.opponent].cap+" damage.</p>");
 			this.playerap = this.playerap + game.players[this.player].ap;
