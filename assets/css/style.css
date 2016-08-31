@@ -1,26 +1,39 @@
+@import url(http://fonts.googleapis.com/css?family=Droid+Sans:400,700);
+
 @font-face {
 	font-family: 'StarWars';
 	src: url('../fonts/Starjedi.ttf');
 }
-* { padding: 0; margin: 0; }
+.gameplay {
+	margin-left: 40px;
+	margin-top: 20px;
+}
+header {
+	width: 100%;
+	padding-bottom: 20px;
+}
 
 h1 {
-	color: fuchsia;
-	font-family: 'StarWars', sans-serif;
-	font-size: 100px;
+	font-family: 'StarWars','Droid Sans', arial, verdana, sans-serif;
+	width: 2.6em;
+	font-size: 6em;
+	line-height: 0.8em;
+	color: #000;
+	text-shadow: -2px -2px 0 #ffff00, 2px -2px 0 #ffff00, -2px 2px 0 #ffff00, 2px 2px 0 #ffff00;
 }
 
-.game-container {
-	width: 100%;
-	height: 100%;
-	background-image: url("../images/bk1.jpg");
-	background-size: cover;
-	background-repeat: no-repeat;
+.background-container {
+	background: url("../images/bk1.jpg") no-repeat center center fixed; 
+	-webkit-background-size: cover;
+	-moz-background-size: cover;
+	-o-background-size: cover;
+	background-size: cover;	
 }
 h2 {
-	color: fuchsia;
+	color: #ffff00;
 	font-family: 'StarWars', sans-serif;
 	font-size: 20px;
+	text-shadow: -2px -2px 0 #000, 2px -2px 0 #000, -2px 2px 0 #000, 2px 2px 0 #000;
 }
 .character {
 	height: 75px;
@@ -33,4 +46,12 @@ h2 {
 	border-color: green;
 	border-width: 2px;
 	background-color: white;
+}
+.fight-status {
+	font-family: 'Droid Sans', arial, verdana, sans-serif;
+	color: #ffff00;
+	text-shadow: -2px -2px 0 #000, 2px -2px 0 #000, -2px 2px 0 #000, 2px 2px 0 #000;
+}
+#fight-status {
+	margin-bottom: 100px;
 }

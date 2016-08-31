@@ -62,20 +62,20 @@ var game = {
 				this.playerhp = Math.max(0, this.playerhp - game.players[this.opponent].cap);
 			}
 			$("[data-name='"+this.player+"']").children("p").html(this.playerhp);
-			this.fightStatus.html("<p>You attacked "+this.players[this.opponent].name+" for "+this.playerap+" damage.</p><p>"+this.players[this.player].name+" attacked you back for "+game.players[this.opponent].cap+" damage.</p>");
+			this.fightStatus.html("<p class='fight-status'>You attacked "+this.players[this.opponent].name+" for "+this.playerap+" damage.</p><p class='fight-status'>"+this.players[this.player].name+" attacked you back for "+game.players[this.opponent].cap+" damage.</p>");
 			this.playerap = this.playerap + game.players[this.player].ap;
 			if (this.playerhp == 0) {
-				this.fightStatus.html("<p>You have been defeated. GAME OVER!!!</p><button id='restart' onclick='game.restart()'>RESTART</button>");
+				this.fightStatus.html("<p class='fight-status'>You have been defeated. GAME OVER!!!</p><button id='restart' onclick='game.restart()'>RESTART</button>");
 			} else if (this.characters.length > 0 && this.opponenthp == 0) {
-				this.fightStatus.html("<p>You have defeated "+this.players[this.opponent].name+". Choose your next opponent.</p>");
+				this.fightStatus.html("<p class='fight-status'>You have defeated "+this.players[this.opponent].name+". Choose your next opponent.</p>");
 				this.opponent = "";
 				this.defenderElement.empty();
 			} else if (this.characters.length < 1 && this.opponenthp == 0) {
 				this.defenderElement.empty();
-				this.fightStatus.html("<p>YOU WON!!! GAME OVER!!!</p><button id='restart' onclick='game.restart()'>RESTART</button>");				
+				this.fightStatus.html("<p class='fight-status'>YOU WON!!! GAME OVER!!!</p><button id='restart' onclick='game.restart()'>RESTART</button>");				
 			}
 		} else if (this.player != "" && this.opponent == "") {
-			this.fightStatus.html("<p>No enemy here.</p>");
+			this.fightStatus.html("<p class='fight-status'>No enemy here.</p>");
 		}
 	},
 	restart: function() {
@@ -103,14 +103,14 @@ var game = {
 $(document).ready(function(){
 	$(".gameplay").hide();
 	//$(".intro-container").css("background-image", "none");
-	$(".intro-container").removeClass("game-container");
+	$('link[rel="stylesheet"][href="assets/css/style.css"]').prop('disabled', true);
 	// Intro end
 	$("#intro").mouseup(function() {
 		var audio = document.getElementById("introAudio");
 		$(this).hide();
 		audio.pause();
-		$(".intro-container").addClass("game-container");
-		$(".game-container").removeClass("intro-container");
+		$('link[rel="stylesheet"][href="assets/css/intro.css"]').prop('disabled', true);
+		$('link[rel="stylesheet"][href="assets/css/style.css"]').prop('disabled', false);
 		$(".gameplay").show();
 	});
 
